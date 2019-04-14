@@ -1,15 +1,8 @@
 import { combineReducers } from 'redux';
-
-const blogPostsReducer = (blogPosts = [], action) => {
-  console.log(action);
-  if ( action.type === 'FETCH_POSTS' ) {
-    console.log('here');
-    return action.payload;
-  }
-
-  return blogPosts;
-}
+import postsReducer from './postsReducer';
+import usersReducer from './usersReducer';
 
 export default combineReducers({
-  blogPosts: blogPostsReducer
+  posts: postsReducer,
+  users: usersReducer
 });
